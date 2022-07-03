@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 const util = require('./utils');
+const licenses = ['Apache', 'GNU', 'BSD', 'MIT','MPL 2.0', 'EPL-2.0', 'None']
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -20,7 +21,13 @@ const questions = [
        type: 'user input',
        name: 'project installation',
        message: 'Please enter installation instructions for your project',
+       choices: ['Apache', 'Eclipse Marketplace', 'BSD', 'MIT','MPL 2.0', 'EPL-2.0', 'NPM', 'None']
     },
+    {
+        type: 'user list',
+        name: 'project license',
+        message: 'Select License for Project from List'
+    }
     {
         type: 'user input',
         name: 'project usage',
@@ -63,10 +70,19 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {
+function init() => {
     return inquirer.prompt(questions);
-};
+}
 
 // Function call to initialize app
 init()
-.then
+.then(userInput => {
+    return generateMarkdown(userInput);
+})
+.catch(err => {
+    console.log(err);
+})
+
+
+//resource for common open source licenses: https://opensource.org/licenses/category
+//resouce for MarkDown license Badges: https://shields.io/category/license
