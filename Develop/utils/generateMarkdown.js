@@ -5,16 +5,16 @@ function renderLicenseBadge(license) {
         return "[![License](https://https://img.shields.io/dub/l/Apache-2.0?style=flat-square)]"
     }
     else if (license===licenseArray[1]) {
-        return "[![License](https://img.shields.io/eclipse-marketplace/l/notepad4e?style=flat-square"
+        return "[![License](https://img.shields.io/eclipse-marketplace/l/notepad4e?style=flat-square)]"
     }
     else if (license===licenseArray[2]) {
-        return "[![License](https://img.shields.io/eclipse-marketplace/l/notepad4e?style=flat-square"
+        return "[![License](https://img.shields.io/apm/l/vim-mode?style=flat-square)]"
     }
     else if (license===licenseArray[3]) {
-        return "[![License](Need Link"
+        return "[![License](https://img.shields.io/ore/l/nucleus?style=flat-square)]"
     }
     else if (license===licenseArray[4]) {
-        return "[![License](Need Link"
+        return "[![License]("NEED
     }
     else if (license===licenseArray[5]) {
         return "[![License](Need Link"

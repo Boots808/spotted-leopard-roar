@@ -6,7 +6,8 @@ const util = require('./utils');
 const licenses = ['Apache', 'GNU', 'BSD', 'MIT','MPL 2.0', 'EPL-2.0', 'None']
 
 // TODO: Create an array of questions for user input
-const questions = [
+//const questions = [
+return inquirer.prompt([
     {
         type: 'user input',
         name: 'projectTitle',
@@ -21,7 +22,7 @@ const questions = [
        type: 'user input',
        name: 'project installation',
        message: 'Please enter installation instructions for your project',
-       choices: ['Apache', 'Eclipse Marketplace', 'BSD', 'MIT','MPL 2.0', 'EPL-2.0', 'NPM', 'None']
+       choices: ['Apache', 'Eclipse Marketplace', 'APM', 'ORE','MIT', 'EPL-2.0', 'NPM', 'None']
     },
     {
         type: 'user list',
@@ -58,7 +59,8 @@ const questions = [
         name: 'project repo name'
         message: 'Please enter the name of your project repo',
     },
-];
+]);
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
