@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 const util = require('./utils');
-const licenses = ['Apache', 'GNU', 'BSD', 'MIT','MPL 2.0', 'EPL-2.0', 'None']
+const licenses = ['Apache', 'GNU', 'BSD', 'Boost','Eclipse', 'IBM', 'None']
 
 // TODO: Create an array of questions for user input
 //const questions = [
@@ -28,7 +28,7 @@ return inquirer.prompt([
         type: 'user list',
         name: 'project license',
         message: 'Select License for Project from List'
-    }
+    },
     {
         type: 'user input',
         name: 'project usage',
@@ -88,3 +88,4 @@ init()
 
 //resource for common open source licenses: https://opensource.org/licenses/category
 //resouce for MarkDown license Badges: https://shields.io/category/license
+//resource for license badges: https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
