@@ -46,7 +46,7 @@ return inquirer.prompt([
     {
         type: 'user input',
         name: 'projectFeatures',
-        message: 'Please list any project features',
+        message: 'Please list any current project features',
     },
     {
         type: 'user input',
@@ -56,12 +56,12 @@ return inquirer.prompt([
     {
         type: 'user input',
         name: 'projectContact',
-        message: 'Please enter your Github username',
+        message: 'Please enter your Github Username and Repo Link',
     },
     {
         type: 'user input',
         name: 'projectRepo',
-        message: 'Please enter the name of your project repo with a link to your repo',
+        message: 'Please enter the name of your project repo with a link to your deployed page',
     },
 ])};
 
@@ -80,7 +80,4 @@ async function init() {
 // Function call to initialize app
 init();
 
-//resource for common open source licenses: https://opensource.org/licenses/category
-//resouce for MarkDown license Badges: https://shields.io/category/license
-//resource for license badges: https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
-//resource for license badges: https://gist.github.com/kofiav/c1059e1075b67582e86b07aa9759e20d
+//1. resource for common open source licenses: https://opensource.org/licenses/category 2.resouce for MarkDown license Badges: https://shields.io/category/license 3. Resource for license badges: https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba 4. Resource for license badges: https://gist.github.com/kofiav/c1059e1075b67582e86b07aa9759e20d
