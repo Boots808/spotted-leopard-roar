@@ -64,25 +64,25 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
     if (license===licenseArray[0]) {
-        return `Get More Information about ${licenseArray[0]} License here`
+        return `Get More Information about ${licenseArray[0]} License here: `
     }
     else if (license===licenseArray[1]) {
-        return `Get More Information about ${licenseArray[1]} License here`
+        return `Get More Information about ${licenseArray[1]} License here: `
     }
     else if (license===licenseArray[2]) {
-        return `Get More Information about ${licenseArray[2]} License here`
+        return `Get More Information about ${licenseArray[2]} License here: `
     }
     else if (license===licenseArray[3]) {
-        return `Get More Information about ${licenseArray[3]} License here`
+        return `Get More Information about ${licenseArray[3]} License here: `
     }
     else if (license===licenseArray[4]) {
-        return `Get More Information about ${licenseArray[4]} License here`
+        return `Get More Information about ${licenseArray[4]} License here: `
     }
     else if (license===licenseArray[5]) {
-        return `Get More Information about ${licenseArray[5]} License here`
+        return `Get More Information about ${licenseArray[5]} License here: `
     }
     else if (license===licenseArray[6]) {
-        return `Get More Information about ${licenseArray[6]} License here`
+        return `Get More Information about ${licenseArray[6]} License here: `
     }
       // If there is no license, return an empty string
       else {
@@ -98,6 +98,7 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license)}
 
   ##License
+
   ${renderLicenseSection(data.license)}
   ${renderLicenseLink(data.license)}
 
@@ -115,25 +116,47 @@ function generateMarkdown(data) {
   * [Repo Name](#projectRepo)
   
   
-  ##Title
+  ##Title = 
   ${data.projectTitle}
-  ##Project Description
+
+
+
+  ##Project Description = 
   ${data.projectDescription}
-  ##Installation
+
+
+
+  ##Installation = 
   ${data.projectInstallation}
-  ##Usage
+
+
+
+  ##Usage = 
   ${data.usage}
-  ##Features
+
+
+
+  ##Features = 
   ${data.projectFeatures}
-  ##Contribution
+
+
+
+  ##Contribution = 
   ${data.projectContributions}
-  ##Credits
+
+
+
+  ##Credits = 
   ${data.credits}
+
+
   
-  ##Contact
+  ##Contact = 
   ${data.projectContact}
 
-  ##Repo Name
+
+
+  ##Repo Name and Link = 
   ${data.projectRepo}
   `;
 

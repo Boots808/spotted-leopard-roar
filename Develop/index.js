@@ -61,7 +61,7 @@ return inquirer.prompt([
     {
         type: 'user input',
         name: 'projectRepo',
-        message: 'Please enter the name of your project repo',
+        message: 'Please enter the name of your project repo with a link to your repo',
     },
 ])};
 
