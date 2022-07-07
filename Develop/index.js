@@ -9,6 +9,11 @@ function userInput () {
 return inquirer.prompt([
     {
         type: 'user input',
+        name: 'Filename',
+        message: 'Enter title of ReadME file Wanted',
+},
+    {
+        type: 'user input',
         name: 'projectTitle',
         message: 'Please enter your project title',
 },
@@ -21,12 +26,12 @@ return inquirer.prompt([
        type: 'user input',
        name: 'projectInstallation',
        message: 'Please enter installation instructions for your project',
-       choices: ['Apache', 'Eclipse Marketplace', 'APM', 'ORE','MIT', 'EPL-2.0', 'NPM', 'None']
     },
     {
-        type: 'user list',
+        type: 'list',
         name: 'license',
-        message: 'Select License for Project from List'
+        message: 'Select License for Project from List',
+        choices: ['Apache', 'Eclipse Marketplace', 'APM', 'ORE','MIT', 'EPL-2.0', 'NPM', 'None'] 
     },
     {
         type: 'user input',
