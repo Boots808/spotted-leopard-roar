@@ -111,29 +111,22 @@ function generateMarkdown(data) {
   
   ##Title
   ${data.projectTitle}
-
   ##Project Description
   ${data.projectDescription}
-
   ##Installation
   ${data.projectInstallation}
-
   ##Usage
   ${data.usage}
-
-
   ##Features
   ${data.projectFeatures}
-
   ##Contribution
   ${data.projectContributions}
-
   ##Credits
   ${data.credits}
   
   ##Contact
   ${data.projectContact}
-
+  
   ##Repo Name
   ${data.projectRepo}
   `;

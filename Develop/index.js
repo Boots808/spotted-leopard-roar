@@ -9,7 +9,7 @@ function userInput () {
 return inquirer.prompt([
     {
         type: 'user input',
-        name: 'Filename',
+        name: 'title',
         message: 'Enter title of ReadME file Wanted',
 },
     {
@@ -74,7 +74,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 async function init() {
     let answers = await userInput();
-    writeToFile((answers.fileName),(generateMarkdown(answers)));
+    writeToFile((answers.title),(generateMarkdown(answers)));
 }
 
 // Function call to initialize app
