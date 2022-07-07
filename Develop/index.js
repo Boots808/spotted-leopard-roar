@@ -50,7 +50,7 @@ return inquirer.prompt([
     },
     {
         type: 'user input',
-        name: 'projectContribution',
+        name: 'projectContributions',
         message: 'Please enter instructions for future contribution to project',
     },
     {

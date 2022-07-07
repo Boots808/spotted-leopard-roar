@@ -3,25 +3,25 @@ const licenseArray = ["Apache", "Eclipse Marketplace", "APM", "ORE","MIT", "EPL-
 // TODO: Create a function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
     if (license===licenseArray[0]) {
-        return "[![License: https://img.shields.io/dub/l/Apache-2.0?style=flat-square)]"
+        return "[![License: ${response.license}](https://img.shields.io/dub/l/Apache-2.0?style=flat-square)]"
     }
     else if (license===licenseArray[1]) {
-        return "[![License: https://img.shields.io/eclipse-marketplace/l/notepad4e?style=flat-square)]"
+        return "[![License: ${response.license}](https://img.shields.io/eclipse-marketplace/l/notepad4e?style=flat-square)]"
     }
     else if (license===licenseArray[2]) {
-        return "[![License: https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]"
+        return "[![License: ${response.license}](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]"
     }
     else if (license===licenseArray[3]) {
-        return "[![License: https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)]"
+        return "[![License: ${response.license}](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)]"
     }
     else if (license===licenseArray[4]) {
-        return "[![License: https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)]"
+        return "[!License: ${response.license}(https://img.shields.io/badge/License-EPL_1.0-red.svg)]"
     }
     else if (license===licenseArray[5]) {
-        return "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)]"
+        return "[!License: ${response.license}](https://img.shields.io/badge/License-IPL_1.0-blue.svg)]"
     }
     else if (license===licenseArray[6]) {
-        return "[![License: https://unlicense.org)]"
+        return "[![License: $response.license}](https://unlicense.org)]"
 }
 // If there is no license, return an empty string
 else {
@@ -58,25 +58,25 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
     if (license===licenseArray[0]) {
-        return `Get More Information ${licenseArray[0]} here`
+        return `Get More Information about ${licenseArray[0]} License here`
     }
     else if (license===licenseArray[1]) {
-        return `Get More Information ${licenseArray[1]} here`
+        return `Get More Information about ${licenseArray[1]} License here`
     }
     else if (license===licenseArray[2]) {
-        return `Get More Information ${licenseArray[2]} here`
+        return `Get More Information about ${licenseArray[2]} License here`
     }
     else if (license===licenseArray[3]) {
-        return `Get More Information ${licenseArray[3]} here`
+        return `Get More Information about ${licenseArray[3]} License here`
     }
     else if (license===licenseArray[4]) {
-        return `Get More Information ${licenseArray[4]} here`
+        return `Get More Information about ${licenseArray[4]} License here`
     }
     else if (license===licenseArray[5]) {
-        return `Get More Information ${licenseArray[5]} here`
+        return `Get More Information about ${licenseArray[5]} License here`
     }
     else if (license===licenseArray[6]) {
-        return `Get More Information ${licenseArray[6]} here`
+        return `Get More Information about ${licenseArray[6]} License here`
     }
       // If there is no license, return an empty string
       else {
@@ -87,8 +87,13 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  ##Badges
+  
+  ##License Badge: 
   ${renderLicenseBadge(data.license)}
+
+  ##License
+  ${renderLicenseSection(data.license)}
+  ${renderLicenseLink(data.license)}
 
   ##Table of Contents
   * [License](#license)
@@ -103,9 +108,6 @@ function generateMarkdown(data) {
   * [Contact](#projectContact)
   * [Repo Name](#projectRepo)
   
-  ##License
-  ${renderLicenseSection(data.license)}
-  ${renderLicenseLink(data.license)}
   
   ##Title
   ${data.projectTitle}
@@ -119,8 +121,6 @@ function generateMarkdown(data) {
   ##Usage
   ${data.usage}
 
-  ##Description
-  ${data.description}
 
   ##Features
   ${data.projectFeatures}
@@ -135,8 +135,8 @@ function generateMarkdown(data) {
   ${data.projectContact}
 
   ##Repo Name
-  ${data.projectRepo}`;
-
+  ${data.projectRepo}
+  `;
 
 }
 
