@@ -11,52 +11,52 @@ return inquirer.prompt([
     {
         type: 'user input',
         name: 'projectTitle',
-        message: 'Please enter your project title?',
+        message: 'Please enter your project title',
 },
     {
         type: 'user input',
-        name: 'project description',
+        name: 'projectDescription',
         message: 'Please enter a description of your project (what, why, and how)',
     },
     {
        type: 'user input',
-       name: 'project installation',
+       name: 'projectInstallation',
        message: 'Please enter installation instructions for your project',
        choices: ['Apache', 'Eclipse Marketplace', 'APM', 'ORE','MIT', 'EPL-2.0', 'NPM', 'None']
     },
     {
         type: 'user list',
-        name: 'project license',
+        name: 'license',
         message: 'Select License for Project from List'
     },
     {
         type: 'user input',
-        name: 'project usage',
+        name: 'usage',
         message: 'Please provide instructions for use',
     },
     {
         type: 'user input',
-        name: 'project credits',
+        name: 'credits',
         message: 'Please enter project credits (collaboration, 3rd party assets, tutorial links etc.)',
     },
     {
         type: 'user input',
-        name: 'project features',
+        name: 'projectFeatures',
         message: 'Please list any project features',
     },
     {
         type: 'user input',
-        name: 'project contribution',
+        name: 'projectContribution',
         message: 'Please enter instructions for future contribution to project',
     },
     {
         type: 'user input',
-        name: 'project github username'
+        name: 'projectContact'
         message: 'Please enter your Github username',
     },
     {
         type: 'user input',
-        name: 'project repo name'
+        name: 'projectRepo'
         message: 'Please enter the name of your project repo',
     },
 ]);

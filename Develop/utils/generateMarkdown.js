@@ -1,5 +1,7 @@
+const licenseArray = ["Apache", "Eclipse Marketplace", "APM", "ORE","MIT", "EPL-2.0", "NPM", "None"]
+
+
 // TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
 function renderLicenseBadge(license) {
     if (license===licenseArray[0]) {
         return "[![License](https://https://img.shields.io/dub/l/Apache-2.0?style=flat-square)]"
@@ -23,10 +25,13 @@ function renderLicenseBadge(license) {
     else if (license===licenseArray[6]) {
         return "[![License](https://unlicense.org)]"
 }
+// If there is no license, return an empty string
+else {
+    return ""
+    }
 }
 
 // TODO: Create a function that returns the license link
-// If there is no license, return an empty string
 function renderLicenseLink(license) {
     if (license===licenseArray[0]) {
         return `https://www.apache.org/licenses/LICENSE-2.0`
@@ -53,12 +58,88 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+    if (license===licenseArr[0]) {
+        return `Get More Information ${licenseArr[0]} here`
+    }
+    else if (license===licenseArr[1]) {
+        return `Get More Information ${licenseArr[1]} here`
+    }
+    else if (license===licenseArr[2]) {
+        return `Get More Information ${licenseArr[2]} here`
+    }
+    else if (license===licenseArr[3]) {
+        return `Get More Information ${licenseArr[3]} here`
+    }
+    else if (license===licenseArr[4]) {
+        return `Get More Information ${licenseArr[4]} here`
+    }
+    else if (license===licenseArr[5]) {
+        return `Get More Information ${licenseArr[5]} here`
+    }
+    else if (license===licenseArr[6]) {
+        return `Get More Information ${licenseArr[6]} here`
+    }
+      // If there is no license, return an empty string
+      else {
+        return ""
+    }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-`;
+  ##Badges
+  ${renderLicenseBadge(data.license)}
+
+  ##Table of Contents
+  * [License](#license)
+  * [Title](#projectTitle)
+  * [Description](#projectDescription)
+  * [Installation](#projectInstallation)
+  * [Usage](#usage)
+  * [Description](#description)
+  * [Features](#projectFeatures)
+  * [Contribution](#projectContributions)
+  * [Credits](#credits)
+  * [Contact](#projectContact)
+  * [Repo Name](#projectRepo)
+  
+  ##License
+  ${renderLicenseSection(data.license)}
+  ${renderLicenseLink(data.license)}
+  
+  ##Title
+  ${data.projectTitle}
+
+  ##Project Description
+  ${data.projectDescription}
+
+  ##Installation
+  ${data.projectInstallation}
+
+  ##Usage
+  ${data.usage}
+
+  ##Description
+  ${data.description}
+
+  ##Features
+  ${data.projectFeatures}
+
+  ##Contribution
+  ${data.projectContributions}
+
+  ##Credits
+  ${data.credits}
+  
+  ##Contact
+  ${data.projectContact}
+
+  ##Repo Name
+  ${data.projectRepo}`;
+
+
 }
 
 module.exports = generateMarkdown;
