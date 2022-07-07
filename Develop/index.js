@@ -7,6 +7,7 @@ const licenses = ['Apache', 'GNU', 'BSD', 'Boost','Eclipse', 'IBM', 'None']
 
 // TODO: Create an array of questions for user input
 //const questions = [
+function userInput() {
 return inquirer.prompt([
     {
         type: 'user input',
@@ -51,15 +52,15 @@ return inquirer.prompt([
     },
     {
         type: 'user input',
-        name: 'projectContact'
+        name: 'projectContact',
         message: 'Please enter your Github username',
     },
     {
         type: 'user input',
-        name: 'projectRepo'
+        name: 'projectRepo',
         message: 'Please enter the name of your project repo',
     },
-]);
+])};
 
 
 // TODO: Create a function to write README file
@@ -72,7 +73,7 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() => {
+const init = () => {
     return inquirer.prompt(questions);
 }
 
