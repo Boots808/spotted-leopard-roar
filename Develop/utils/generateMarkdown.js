@@ -1,5 +1,5 @@
-const licenseArray = ["Apache", "Eclipse Marketplace", "APM", "ORE","MIT", "EPL-2.0", "NPM", "None"]
 const inquirer = require('inquirer');
+const licenseArray = ["Apache", "Eclipse Marketplace", "APM", "ORE","MIT", "EPL-2.0", "NPM", "None"]
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
@@ -59,26 +59,26 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-    if (license===licenseArr[0]) {
-        return `Get More Information ${licenseArr[0]} here`
+    if (license===licenseArray[0]) {
+        return `Get More Information ${licenseArray[0]} here`
     }
-    else if (license===licenseArr[1]) {
-        return `Get More Information ${licenseArr[1]} here`
+    else if (license===licenseArray[1]) {
+        return `Get More Information ${licenseArray[1]} here`
     }
-    else if (license===licenseArr[2]) {
-        return `Get More Information ${licenseArr[2]} here`
+    else if (license===licenseArray[2]) {
+        return `Get More Information ${licenseArray[2]} here`
     }
-    else if (license===licenseArr[3]) {
-        return `Get More Information ${licenseArr[3]} here`
+    else if (license===licenseArray[3]) {
+        return `Get More Information ${licenseArray[3]} here`
     }
-    else if (license===licenseArr[4]) {
-        return `Get More Information ${licenseArr[4]} here`
+    else if (license===licenseArray[4]) {
+        return `Get More Information ${licenseArray[4]} here`
     }
-    else if (license===licenseArr[5]) {
-        return `Get More Information ${licenseArr[5]} here`
+    else if (license===licenseArray[5]) {
+        return `Get More Information ${licenseArray[5]} here`
     }
-    else if (license===licenseArr[6]) {
-        return `Get More Information ${licenseArr[6]} here`
+    else if (license===licenseArray[6]) {
+        return `Get More Information ${licenseArray[6]} here`
     }
       // If there is no license, return an empty string
       else {

@@ -2,10 +2,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
-const licenses = ['Apache', 'GNU', 'BSD', 'Boost','Eclipse', 'IBM', 'None']
+//const licenses = ['Apache', 'GNU', 'BSD', 'Boost','Eclipse', 'IBM', 'None']
 
 // TODO: Create an array of questions for user input
-const questions = () => {
+function userInput () {
 return inquirer.prompt([
     {
         type: 'user input',
@@ -60,31 +60,20 @@ return inquirer.prompt([
     },
 ])};
 
-
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, err => {
-        if(err) throw err;
-        console.log('Successfully created ReadMe!')
-    })
-
+    fs.appendFile(`${fileName}.md`, data, 
+    (err) => err ? console.error(err) : console.log(`${fileName}.md Has Successfully Been Created! .`))
 }
 
 // TODO: Create a function to initialize app
-function init() {
-    questions()
-    .then(input => {
-        return generateMarkdown(input);
-    })
-    .then(markdown => {
-        writeToFile('./dist/README.md, markdown');
-    })
+async function init() {
+    let answers = await userInput();
+    writeToFile((answers.fileName),(generateMarkdown(answers)));
 }
 
-
 // Function call to initialize app
-init()
-
+init();
 
 //resource for common open source licenses: https://opensource.org/licenses/category
 //resouce for MarkDown license Badges: https://shields.io/category/license
