@@ -1,27 +1,30 @@
-const licenseArray = ["Apache", "Eclipse Marketplace", "APM", "ORE","MIT", "EPL-2.0", "NPM", "None"]
+const licenseArray = ["Apache", "Eclipse Marketplace", "APM", "GNU","IBM", "Mozilla", "Perl", "None"]
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
     if (license===licenseArray[0]) {
-        return "[![License: ${response.license}](https://img.shields.io/dub/l/Apache-2.0?style=flat-square)]"
+        return "[![License: Apache 2.0](https://img.shields.io/aur/license/android-studio?style=flat-square)]"
     }
     else if (license===licenseArray[1]) {
-        return "[![License: ${response.license}](https://img.shields.io/eclipse-marketplace/l/notepad4e?style=flat-square)]"
+        return "[![License: Eclipse Marketplace](https://img.shields.io/eclipse-marketplace/l/notepad4e?style=flat-square)]"
     }
     else if (license===licenseArray[2]) {
-        return "[![License: ${response.license}](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]"
+        return "[![License: APM](https://img.shields.io/apm/l/vim-mode?style=for-the-badge)]"
     }
     else if (license===licenseArray[3]) {
-        return "[![License: ${response.license}](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)]"
+        return "[![License: GNU](https://img.shields.io/badge/License-GPL%20v2-blue.svg)]"
     }
     else if (license===licenseArray[4]) {
-        return "[!License: ${response.license}(https://img.shields.io/badge/License-EPL_1.0-red.svg)]"
+        return "[![License: IPL 1.0 IBM](https://img.shields.io/badge/License-IPL%201.0-blue.svg)]"
     }
     else if (license===licenseArray[5]) {
-        return "[!License: ${response.license}](https://img.shields.io/badge/License-IPL_1.0-blue.svg)]"
+        return "[![License: MPL 2.0 Mozilla](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)]"
     }
     else if (license===licenseArray[6]) {
-        return "[![License: $response.license}](https://unlicense.org)]"
+        return "[![License: Artistic-2.0 Perl](https://img.shields.io/badge/License-Perl-0298c3.svg)]"
+    }
+    else if (license===licenseArray[7]) {
+        return "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)"
 }
 // If there is no license, return an empty string
 else {
@@ -35,21 +38,24 @@ function renderLicenseLink(license) {
         return `https://www.apache.org/licenses/LICENSE-2.0`
     }
     else if (license===licenseArray[1]) {
-        return `https://www.gnu.org/licenses/gpl-3.0.en.html`
+        return `https://marketplace.eclipse.org/content/marketplace-client-content-inclusion-policy`
     }
     else if (license===licenseArray[2]) {
-        return `https://opensource.org/licenses/BSD-3-Clause`
+        return `https://docs.appdynamics.com/appd/22.x/latest/en/appdynamics-licensing/license-entitlements-and-restrictions`
     }
     else if (license===licenseArray[3]) {
-        return `https://opensource.org/licenses/BSL-1.0`
+        return `https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html`
     }
     else if (license===licenseArray[4]) {
-        return `https://www.eclipse.org/legal/epl-2.0/`
+        return `https://opensource.org/licenses/IPL-1.0`
     }
     else if (license===licenseArray[5]) {
-        `https://www-40.ibm.com/software/sla/sladb.nsf`
+        `https://opensource.org/licenses/MPL-2.0`
     }
     else if (license===licenseArray[6]) {
+        `https://opensource.org/licenses/Artistic-2.0`
+    }
+    else if (license===licenseArray[7]) {
         return `https://unlicense.org`
     }
 }
@@ -126,7 +132,7 @@ function generateMarkdown(data) {
   
   ##Contact
   ${data.projectContact}
-  
+
   ##Repo Name
   ${data.projectRepo}
   `;

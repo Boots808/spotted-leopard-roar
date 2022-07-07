@@ -31,7 +31,7 @@ return inquirer.prompt([
         type: 'list',
         name: 'license',
         message: 'Select License for Project from List',
-        choices: ['Apache', 'Eclipse Marketplace', 'APM', 'ORE','MIT', 'EPL-2.0', 'NPM', 'None'] 
+        choices: ['Apache', 'Eclipse Marketplace', 'APM', 'GNU','IBM', 'Mozilla', 'Perl', 'None'] 
     },
     {
         type: 'user input',
@@ -83,3 +83,4 @@ init();
 //resource for common open source licenses: https://opensource.org/licenses/category
 //resouce for MarkDown license Badges: https://shields.io/category/license
 //resource for license badges: https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+//resource for license badges: https://gist.github.com/kofiav/c1059e1075b67582e86b07aa9759e20d
