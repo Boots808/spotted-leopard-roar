@@ -1,5 +1,5 @@
 const licenseArray = ["Apache", "Eclipse Marketplace", "APM", "ORE","MIT", "EPL-2.0", "NPM", "None"]
-
+const inquirer = require('inquirer');
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {

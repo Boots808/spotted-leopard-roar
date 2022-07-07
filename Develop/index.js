@@ -1,13 +1,11 @@
 //DONE!! TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./generateMarkdownutils/generateMarkdown');
-const util = require('./utils');
+const generateMarkdown = require('./utils/generateMarkdown');
 const licenses = ['Apache', 'GNU', 'BSD', 'Boost','Eclipse', 'IBM', 'None']
 
 // TODO: Create an array of questions for user input
-//const questions = [
-function userInput() {
+const questions = () => {
 return inquirer.prompt([
     {
         type: 'user input',
@@ -73,18 +71,19 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-const init = () => {
-    return inquirer.prompt(questions);
+function init() {
+    questions()
+    .then(input => {
+        return generateMarkdown(input);
+    })
+    .then(markdown => {
+        writeToFile('./dist/README.md, markdown');
+    })
 }
+
 
 // Function call to initialize app
 init()
-.then(userInput => {
-    return generateMarkdown(userInput);
-})
-.catch(err => {
-    console.log(err);
-})
 
 
 //resource for common open source licenses: https://opensource.org/licenses/category
