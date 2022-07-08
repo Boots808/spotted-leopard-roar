@@ -79,5 +79,5 @@ Future contribution that could be added to this project is upkeep of the current
   Spotted-Leopard-Roar Link to the Deployed Page: 
   (Note: page will not work for this particular repo since it was created using Node):https://github.com/Boots808/spotted-leopard-roar
   
-  ## Link to the video presentation: https://drive.google.com/file/d/1BhJDAijX8_gPPQDFxVeirlTogyESR9sw/view?usp=sharing)
+  ## Link to the video presentation: https://drive.google.com/file/d/1BhJDAijX8_gPPQDFxVeirlTogyESR9sw/view?usp=sharing
   
