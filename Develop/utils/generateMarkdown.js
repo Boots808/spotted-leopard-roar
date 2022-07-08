@@ -1,6 +1,7 @@
+//license array
 const licenseArray = ["Apache", "Eclipse Marketplace", "APM", "GNU","IBM", "Mozilla", "Perl", "None"]
 
-// TODO: Create a function that returns a license badge based on which license is passed in
+//functions that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
     if (license===licenseArray[0]) {
         return "[![License: Apache 2.0](https://img.shields.io/aur/license/android-studio?style=flat-square)]"
@@ -32,7 +33,7 @@ else {
     }
 }
 
-// TODO: Create a function that returns the license link
+// functions that returns the license link
 function renderLicenseLink(license) {
     if (license===licenseArray[0]) {
         return `https://www.apache.org/licenses/LICENSE-2.0`
@@ -60,8 +61,7 @@ function renderLicenseLink(license) {
     }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// functions that returns the license section of README
 function renderLicenseSection(license) {
     if (license===licenseArray[0]) {
         return `Get More Information about ${licenseArray[0]} License here: `
@@ -90,74 +90,72 @@ function renderLicenseSection(license) {
     }
 }
 
-// TODO: Create a function to generate markdown for README
+// function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${data.projectTitle}
   
-  ##License Badge: 
+  ## License Badge
   ${renderLicenseBadge(data.license)}
 
-  ##License
+  ## License Link
 
   ${renderLicenseSection(data.license)}
   ${renderLicenseLink(data.license)}
 
-  ##Table of Contents
-  * [License](#license)
-  * [Title](#projectTitle)
-  * [Description](#projectDescription)
-  * [Installation](#projectInstallation)
-  * [Usage](#usage)
+  ## Table of Contents
+  * [Project-Title](#project-title)
   * [Description](#description)
-  * [Features](#projectFeatures)
-  * [Contribution](#projectContributions)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Features](#features)
+  * [Contribution](#contribution)
   * [Credits](#credits)
-  * [Contact](#projectContact)
-  * [Repo Name](#projectRepo)
+  * [Contact](#contact)
+  * [Repo-Info](#repo-info)
   
   
-  ##Title = 
-  ${data.projectTitle}
+  ## Project Title
+  ${data.title}
 
 
 
-  ##Project Description = 
-  ${data.projectDescription}
+  ## Description
+  ${data.description}
 
 
 
-  ##Installation = 
-  ${data.projectInstallation}
+  ## Installation
+  ${data.installation}
 
 
 
-  ##Usage = 
+  ## Usage
   ${data.usage}
 
 
 
-  ##Features = 
-  ${data.projectFeatures}
+  ## Features
+  ${data.features}
 
 
 
-  ##Contribution = 
-  ${data.projectContributions}
+  ## Contribution
+  ${data.contributions}
 
 
 
-  ##Credits = 
+  ## Credits
   ${data.credits}
 
 
   
-  ##Contact = 
-  ${data.projectContact}
+  ## Contact
+  ${data.contact}
 
 
 
-  ##Repo Name and Link = 
-  ${data.projectRepo}
+  ## Repo Info
+  ${data.repoInfo}
   `;
 
 }

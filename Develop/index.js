@@ -1,16 +1,17 @@
-//DONE!! TODO: Include packages needed for this application
+//packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
-//const licenses = ['Apache', 'GNU', 'BSD', 'Boost','Eclipse', 'IBM', 'None']
 
-// TODO: Create an array of questions for user input
+
+// questions array for user input
+
 function userInput () {
 return inquirer.prompt([
     {
         type: 'user input',
         name: 'title',
-        message: 'Enter title of ReadME file Wanted',
+        message: 'Enter name of ReadME file',
 },
     {
         type: 'user input',
@@ -19,12 +20,12 @@ return inquirer.prompt([
 },
     {
         type: 'user input',
-        name: 'projectDescription',
+        name: 'description',
         message: 'Please enter a description of your project (what, why, and how)',
     },
     {
        type: 'user input',
-       name: 'projectInstallation',
+       name: 'installation',
        message: 'Please enter installation instructions for your project',
     },
     {
@@ -45,39 +46,38 @@ return inquirer.prompt([
     },
     {
         type: 'user input',
-        name: 'projectFeatures',
+        name: 'features',
         message: 'Please list any current project features',
     },
     {
         type: 'user input',
-        name: 'projectContributions',
+        name: 'contributions',
         message: 'Please enter instructions for future contribution to project',
     },
     {
         type: 'user input',
-        name: 'projectContact',
+        name: 'contact',
         message: 'Please enter your Github Username and Repo Link',
     },
     {
         type: 'user input',
-        name: 'projectRepo',
+        name: 'repoInfo',
         message: 'Please enter the name of your project repo with a link to your deployed page',
     },
 ])};
+//end of questions array for user input
 
-// TODO: Create a function to write README file
+// function to write README file
 function writeToFile(fileName, data) {
     fs.appendFile(`${fileName}.md`, data, 
     (err) => err ? console.error(err) : console.log(`${fileName}.md Has Successfully Been Created! .`))
 }
 
-// TODO: Create a function to initialize app
+// function to initialize app
 async function init() {
     let answers = await userInput();
     writeToFile((answers.title),(generateMarkdown(answers)));
 }
 
-// Function call to initialize app
+// function call to initialize app
 init();
-
-//1. resource for common open source licenses: https://opensource.org/licenses/category 2.resouce for MarkDown license Badges: https://shields.io/category/license 3. Resource for license badges: https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba 4. Resource for license badges: https://gist.github.com/kofiav/c1059e1075b67582e86b07aa9759e20d
